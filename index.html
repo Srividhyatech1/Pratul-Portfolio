@@ -2,173 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pratul Ramesh — Motorsports & Marketing</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
-      background: #0a0a0a;
-      min-height: 100vh;
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
+      background: #0a0a0a;
+      color: white;
     }
+
+    /* NAV */
     nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       padding: 20px 48px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky;
+      top: 0;
+      background: #0a0a0a;
     }
-    .nav-logo { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a { color: rgba(255,255,255,0.55); font-size: 14px; text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: #fff; }
-    .btn-connect {
-      background: #2563eb; color: #fff; border: none; border-radius: 8px;
-      padding: 8px 18px; font-size: 14px; font-weight: 600; font-family: inherit;
-      cursor: pointer; display: flex; align-items: center; gap: 6px;
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
     }
-    .btn-connect:hover { background: #1d4ed8; }
-    .btn-connect .li-badge { font-size: 11px; font-weight: 800; background: rgba(255,255,255,0.2); border-radius: 3px; padding: 1px 4px; }
+
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
     .hero {
-      flex: 1; display: grid; grid-template-columns: 1fr 1fr;
-      padding: 56px 48px 64px; max-width: 1200px; width: 100%; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 80px 48px;
     }
-    .hero-left { display: flex; flex-direction: column; justify-content: center; padding-right: 48px; }
-    .hero-tag { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
-    .hero-tag-dot { width: 8px; height: 8px; background: #2563eb; border-radius: 50%; flex-shrink: 0; }
-    .hero-tag span { color: rgba(255,255,255,0.55); font-size: 13px; letter-spacing: 0.02em; }
-    h1 { font-size: 72px; font-weight: 900; line-height: 1.0; letter-spacing: -3px; margin-bottom: 24px; }
-    h1 em { font-style: italic; }
-    .hero-body { color: rgba(255,255,255,0.55); font-size: 15px; line-height: 1.7; margin-bottom: 36px; max-width: 380px; }
-    .hero-ctas { display: flex; gap: 12px; align-items: center; }
+
+    h1 {
+      font-size: 64px;
+      font-weight: 900;
+    }
+
     .btn-primary {
-      background: #2563eb; color: #fff; border: none; border-radius: 100px;
-      padding: 14px 28px; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
+      background: #2563eb;
+      padding: 12px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
     }
-    .btn-primary:hover { background: #1d4ed8; }
+
     .btn-secondary {
-      background: rgba(255,255,255,0.06); color: #fff;
-      border: 1px solid rgba(255,255,255,0.12); border-radius: 100px;
-      padding: 14px 24px; font-size: 15px; font-weight: 600; font-family: inherit;
-      cursor: pointer; display: flex; align-items: center; gap: 8px;
+      border: 1px solid #aaa;
+      padding: 12px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
     }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-    .li-icon {
-      background: #0077b5; border-radius: 4px; width: 18px; height: 18px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; color: #fff; font-weight: 800; flex-shrink: 0;
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
     }
-    .hero-right {
-      display: flex; flex-direction: column; justify-content: center;
-      padding-left: 48px; border-left: 1px solid rgba(255,255,255,0.07);
+
+    /* SECTIONS */
+    section {
+      padding: 100px 48px;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
-    .section-label {
-      color: rgba(255,255,255,0.3); font-size: 11px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px;
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
     }
-    .skills-groups { display: flex; flex-direction: column; gap: 24px; }
-    .skill-group-title {
-      color: #2563eb; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 6px; padding: 6px 12px; color: rgba(255,255,255,0.75);
-      font-size: 13px; font-weight: 500; letter-spacing: 0.01em;
-    }
-    .experience-strip { margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); }
-    .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .exp-tag {
-      background: transparent; border: 1px solid rgba(37,99,235,0.4);
-      border-radius: 6px; padding: 5px 12px; color: rgba(255,255,255,0.6);
-      font-size: 12px; font-weight: 500;
-    }
-    @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 40px 24px 48px; }
-      .hero-left { padding-right: 0; margin-bottom: 48px; }
-      h1 { font-size: 48px; letter-spacing: -2px; }
-      .hero-right { padding-left: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 40px; }
-    }
+
   </style>
 </head>
+
 <body>
-  <nav>
-    <span class="nav-logo">PR.</span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#contact">Contact</a>
+
+<!-- NAV -->
+<nav>
+  <div>PR.</div>
+
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div>
+    <h1>From pit lane<br>to boardroom.</h1>
+
+    <p>
+      I am Pratul Ramesh — blending motorsport precision with marketing strategy.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#experience" class="btn-primary">View My Journey</a>
+
+      <a href="https://uk.linkedin.com/in/pratul-ramesh-f1" target="_blank" class="btn-secondary">
+        LinkedIn
+      </a>
     </div>
-    <button class="btn-connect"><span class="li-badge">in</span> Connect</button>
-  </nav>
-  <main class="hero">
-    <div class="hero-left">
-      <div class="hero-tag">
-        <span class="hero-tag-dot"></span>
-        <span>Motorsports · Marketing · Oxford, UK</span>
-      </div>
-      <h1>From pit lane<br>to <em>boardroom.</em></h1>
-      <p class="hero-body">
-        I am Pratul Ramesh — three seasons at Aston Martin F1, Mahindra Group branding,
-        and Oxford Brookes Racing. I operate where elite motorsport meets strategic marketing.
-      </p>
-      <div class="hero-ctas">
-        <button class="btn-primary">View My Journey</button>
-        <button class="btn-secondary"><span class="li-icon">in</span> LinkedIn</button>
-      </div>
-    </div>
-    <div class="hero-right">
-      <p class="section-label">Skills &amp; Expertise</p>
-      <div class="skills-groups">
-        <div>
-          <p class="skill-group-title">Motorsport</p>
-          <div class="skill-tags">
-            <span class="skill-tag">F1 &amp; Formula E</span>
-            <span class="skill-tag">Paddock Operations</span>
-            <span class="skill-tag">Race Weekend Management</span>
-            <span class="skill-tag">Sponsorship Activation</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-title">Marketing</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Brand Strategy</span>
-            <span class="skill-tag">Campaign Planning</span>
-            <span class="skill-tag">Content &amp; Media</span>
-            <span class="skill-tag">Stakeholder Relations</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-title">Commercial</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Partnership Development</span>
-            <span class="skill-tag">B2B Communications</span>
-            <span class="skill-tag">Market Research</span>
-            <span class="skill-tag">ROI Analysis</span>
-          </div>
-        </div>
-      </div>
-      <div class="experience-strip">
-        <p class="section-label">Experience</p>
-        <div class="exp-tags">
-          <span class="exp-tag">Aston Martin F1</span>
-          <span class="exp-tag">Mahindra Group</span>
-          <span class="exp-tag">Oxford Brookes Racing</span>
-          <span class="exp-tag">Oxford, UK</span>
-        </div>
-      </div>
-    </div>
-  </main>
+  </div>
+
+  <div>
+    <h3>Skills Preview</h3>
+    <p>Motorsport · Marketing · Partnerships</p>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I work at the intersection of motorsport, marketing and commercial strategy.
+  </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+  <p>Aston Martin F1 · Mahindra Group · Oxford Brookes Racing</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <p>Brand Strategy · Events · Partnerships · Digital Marketing</p>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <h2>Highlights</h2>
+  <p>3 Seasons F1 · 100+ VIP Stakeholders · £10K+ Revenue</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: pratulrameshsri@gmail.com</p>
+</section>
+
 </body>
 </html>
