@@ -9,9 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
     body {
       background: #0a0a0a;
       min-height: 100vh;
@@ -20,365 +17,92 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 48px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-
-    .nav-logo { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; text-decoration: none; color: #fff; }
-
+    .nav-logo { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
     .nav-links { display: flex; gap: 32px; }
     .nav-links a { color: rgba(255,255,255,0.55); font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: #fff; }
-
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-
     .btn-connect {
       background: #2563eb; color: #fff; border: none; border-radius: 8px;
       padding: 8px 18px; font-size: 14px; font-weight: 600; font-family: inherit;
       cursor: pointer; display: flex; align-items: center; gap: 6px;
-      text-decoration: none; transition: background 0.2s;
     }
     .btn-connect:hover { background: #1d4ed8; }
     .btn-connect .li-badge { font-size: 11px; font-weight: 800; background: rgba(255,255,255,0.2); border-radius: 3px; padding: 1px 4px; }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      background: #111;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s ease;
-    }
-    .mobile-menu.open { max-height: 400px; }
-    .mobile-menu a {
-      color: rgba(255,255,255,0.7);
-      font-size: 15px;
-      text-decoration: none;
-      padding: 14px 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: color 0.2s, background 0.2s;
-    }
-    .mobile-menu a:hover { color: #fff; background: rgba(255,255,255,0.04); }
-
-    /* ── HERO ── */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 56px 48px 64px;
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
+      flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+      padding: 56px 48px 64px; max-width: 1200px; width: 100%; margin: 0 auto;
     }
-
     .hero-left { display: flex; flex-direction: column; justify-content: center; padding-right: 48px; }
-
     .hero-tag { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
     .hero-tag-dot { width: 8px; height: 8px; background: #2563eb; border-radius: 50%; flex-shrink: 0; }
     .hero-tag span { color: rgba(255,255,255,0.55); font-size: 13px; letter-spacing: 0.02em; }
-
     h1 { font-size: 72px; font-weight: 900; line-height: 1.0; letter-spacing: -3px; margin-bottom: 24px; }
     h1 em { font-style: italic; }
-
     .hero-body { color: rgba(255,255,255,0.55); font-size: 15px; line-height: 1.7; margin-bottom: 36px; max-width: 380px; }
-
-    .hero-ctas { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-
+    .hero-ctas { display: flex; gap: 12px; align-items: center; }
     .btn-primary {
       background: #2563eb; color: #fff; border: none; border-radius: 100px;
-      padding: 14px 28px; font-size: 15px; font-weight: 700; font-family: inherit;
-      cursor: pointer; text-decoration: none; display: inline-block;
-      transition: background 0.2s;
+      padding: 14px 28px; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
     }
     .btn-primary:hover { background: #1d4ed8; }
-
     .btn-secondary {
       background: rgba(255,255,255,0.06); color: #fff;
       border: 1px solid rgba(255,255,255,0.12); border-radius: 100px;
       padding: 14px 24px; font-size: 15px; font-weight: 600; font-family: inherit;
-      cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
-      text-decoration: none; transition: background 0.2s;
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
     }
     .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-
     .li-icon {
       background: #0077b5; border-radius: 4px; width: 18px; height: 18px;
       display: flex; align-items: center; justify-content: center;
       font-size: 10px; color: #fff; font-weight: 800; flex-shrink: 0;
     }
-
     .hero-right {
       display: flex; flex-direction: column; justify-content: center;
       padding-left: 48px; border-left: 1px solid rgba(255,255,255,0.07);
     }
-
     .section-label {
       color: rgba(255,255,255,0.3); font-size: 11px; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px;
     }
-
     .skills-groups { display: flex; flex-direction: column; gap: 24px; }
-
     .skill-group-title {
       color: #2563eb; font-size: 11px; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;
     }
-
     .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
     .skill-tag {
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
       border-radius: 6px; padding: 6px 12px; color: rgba(255,255,255,0.75);
       font-size: 13px; font-weight: 500; letter-spacing: 0.01em;
     }
-
     .experience-strip { margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); }
-
     .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
     .exp-tag {
       background: transparent; border: 1px solid rgba(37,99,235,0.4);
       border-radius: 6px; padding: 5px 12px; color: rgba(255,255,255,0.6);
       font-size: 12px; font-weight: 500;
     }
-
-    /* ── SECTIONS ── */
-    .section {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 80px 48px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .section-heading {
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: -2px;
-      margin-bottom: 48px;
-    }
-    .section-heading em { font-style: italic; }
-
-    /* About */
-    .about-text {
-      color: rgba(255,255,255,0.65);
-      font-size: 17px;
-      line-height: 1.8;
-      max-width: 680px;
-    }
-    .about-text p + p { margin-top: 20px; }
-
-    /* Experience */
-    .exp-cards { display: flex; flex-direction: column; gap: 24px; }
-
-    .exp-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 28px 32px;
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .exp-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      background: rgba(37,99,235,0.15);
-      border: 1px solid rgba(37,99,235,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: 800;
-      color: #2563eb;
-      letter-spacing: 0.03em;
-      flex-shrink: 0;
-      text-align: center;
-      line-height: 1.2;
-    }
-
-    .exp-details { flex: 1; }
-    .exp-role { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-    .exp-org { color: #2563eb; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-    .exp-period { color: rgba(255,255,255,0.35); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
-    .exp-desc { color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.7; }
-
-    /* Highlights */
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .highlight-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 28px 24px;
-    }
-
-    .highlight-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(37,99,235,0.15);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .highlight-icon svg { width: 20px; height: 20px; stroke: #2563eb; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-    .highlight-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .highlight-body { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.6; }
-
-    /* Contact */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-
-    .contact-blurb { color: rgba(255,255,255,0.55); font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
-
-    .contact-links { display: flex; flex-direction: column; gap: 12px; }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-    .contact-link:hover { color: #fff; }
-    .contact-link-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .contact-link-icon svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .contact-form input,
-    .contact-form textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: #fff;
-      font-family: inherit;
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.2s;
-      resize: vertical;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
-    .contact-form input:focus,
-    .contact-form textarea:focus { border-color: rgba(37,99,235,0.6); }
-    .contact-form textarea { min-height: 120px; }
-    .btn-form {
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 24px;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      align-self: flex-start;
-      transition: background 0.2s;
-    }
-    .btn-form:hover { background: #1d4ed8; }
-
-    /* Form message */
-    .form-msg {
-      display: none;
-      color: #4ade80;
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 28px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255,255,255,0.25);
-      font-size: 12px;
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .mobile-menu { display: flex; }
-
       .hero { grid-template-columns: 1fr; padding: 40px 24px 48px; }
       .hero-left { padding-right: 0; margin-bottom: 48px; }
       h1 { font-size: 48px; letter-spacing: -2px; }
       .hero-right { padding-left: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 40px; }
-
-      .section { padding: 56px 24px; }
-      .section-heading { font-size: 32px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .exp-card { flex-direction: column; gap: 16px; padding: 20px; }
-      footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ── NAV ── -->
   <nav>
-    <a href="#" class="nav-logo">PR.</a>
+    <span class="nav-logo">PR.</span>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -386,309 +110,65 @@
       <a href="#highlights">Highlights</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="nav-right">
-      <a href="https://www.linkedin.com/in/pratulramesh" target="_blank" rel="noopener" class="btn-connect">
-        <span class="li-badge">in</span> Connect
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <button class="btn-connect"><span class="li-badge">in</span> Connect</button>
   </nav>
-
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" class="mobile-nav-link">About</a>
-    <a href="#experience" class="mobile-nav-link">Experience</a>
-    <a href="#skills" class="mobile-nav-link">Skills</a>
-    <a href="#highlights" class="mobile-nav-link">Highlights</a>
-    <a href="#contact" class="mobile-nav-link">Contact</a>
-  </div>
-
-  <!-- ── HERO ── -->
-  <main>
-    <div class="hero">
-      <div class="hero-left">
-        <div class="hero-tag">
-          <span class="hero-tag-dot"></span>
-          <span>Motorsports · Marketing · Oxford, UK</span>
+  <main class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        <span>Motorsports · Marketing · Oxford, UK</span>
+      </div>
+      <h1>From pit lane<br>to <em>boardroom.</em></h1>
+      <p class="hero-body">
+        I am Pratul Ramesh — three seasons at Aston Martin F1, Mahindra Group branding,
+        and Oxford Brookes Racing. I operate where elite motorsport meets strategic marketing.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary">View My Journey</button>
+        <button class="btn-secondary"><span class="li-icon">in</span> LinkedIn</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <p class="section-label">Skills &amp; Expertise</p>
+      <div class="skills-groups">
+        <div>
+          <p class="skill-group-title">Motorsport</p>
+          <div class="skill-tags">
+            <span class="skill-tag">F1 &amp; Formula E</span>
+            <span class="skill-tag">Paddock Operations</span>
+            <span class="skill-tag">Race Weekend Management</span>
+            <span class="skill-tag">Sponsorship Activation</span>
+          </div>
         </div>
-        <h1>From pit lane<br>to <em>boardroom.</em></h1>
-        <p class="hero-body">
-          I am Pratul Ramesh — three seasons at Aston Martin F1, Mahindra Group branding,
-          and Oxford Brookes Racing. I operate where elite motorsport meets strategic marketing.
-        </p>
-        <div class="hero-ctas">
-          <a href="#experience" class="btn-primary">View My Journey</a>
-          <a href="https://www.linkedin.com/in/pratulramesh" target="_blank" rel="noopener" class="btn-secondary">
-            <span class="li-icon">in</span> LinkedIn
-          </a>
+        <div>
+          <p class="skill-group-title">Marketing</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Brand Strategy</span>
+            <span class="skill-tag">Campaign Planning</span>
+            <span class="skill-tag">Content &amp; Media</span>
+            <span class="skill-tag">Stakeholder Relations</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-title">Commercial</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Partnership Development</span>
+            <span class="skill-tag">B2B Communications</span>
+            <span class="skill-tag">Market Research</span>
+            <span class="skill-tag">ROI Analysis</span>
+          </div>
         </div>
       </div>
-
-      <div class="hero-right" id="skills">
-        <p class="section-label">Skills &amp; Expertise</p>
-        <div class="skills-groups">
-          <div>
-            <p class="skill-group-title">Motorsport</p>
-            <div class="skill-tags">
-              <span class="skill-tag">F1 &amp; Formula E</span>
-              <span class="skill-tag">Paddock Operations</span>
-              <span class="skill-tag">Race Weekend Management</span>
-              <span class="skill-tag">Sponsorship Activation</span>
-            </div>
-          </div>
-          <div>
-            <p class="skill-group-title">Marketing</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Brand Strategy</span>
-              <span class="skill-tag">Campaign Planning</span>
-              <span class="skill-tag">Content &amp; Media</span>
-              <span class="skill-tag">Stakeholder Relations</span>
-            </div>
-          </div>
-          <div>
-            <p class="skill-group-title">Commercial</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Partnership Development</span>
-              <span class="skill-tag">B2B Communications</span>
-              <span class="skill-tag">Market Research</span>
-              <span class="skill-tag">ROI Analysis</span>
-            </div>
-          </div>
-        </div>
-        <div class="experience-strip">
-          <p class="section-label">Experience</p>
-          <div class="exp-tags">
-            <span class="exp-tag">Aston Martin F1</span>
-            <span class="exp-tag">Mahindra Group</span>
-            <span class="exp-tag">Oxford Brookes Racing</span>
-            <span class="exp-tag">Oxford, UK</span>
-          </div>
+      <div class="experience-strip">
+        <p class="section-label">Experience</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Aston Martin F1</span>
+          <span class="exp-tag">Mahindra Group</span>
+          <span class="exp-tag">Oxford Brookes Racing</span>
+          <span class="exp-tag">Oxford, UK</span>
         </div>
       </div>
     </div>
-
-    <!-- ── ABOUT ── -->
-    <section id="about" class="section">
-      <h2 class="section-heading">Who I <em>am.</em></h2>
-      <div class="about-text">
-        <p>
-          I'm Pratul Ramesh — a motorsport and marketing professional based in Oxford, UK. My career sits at the
-          intersection of elite sport and commercial strategy, combining hands-on paddock experience with a sharp
-          understanding of brand, media, and partnership value.
-        </p>
-        <p>
-          Over three seasons embedded with Aston Martin F1, I developed a deep appreciation for how storytelling,
-          sponsorship, and performance culture converge at the highest level of sport. That perspective now informs
-          every campaign, partnership, and brand decision I work on.
-        </p>
-        <p>
-          Whether I'm in the paddock at a race weekend or in the boardroom building commercial strategy, I bring
-          the same intensity and attention to detail that Formula 1 demands.
-        </p>
-      </div>
-    </section>
-
-    <!-- ── EXPERIENCE ── -->
-    <section id="experience" class="section">
-      <h2 class="section-heading">My <em>journey.</em></h2>
-      <div class="exp-cards">
-
-        <div class="exp-card">
-          <div class="exp-logo">AMF1</div>
-          <div class="exp-details">
-            <p class="exp-role">Marketing &amp; Partnerships</p>
-            <p class="exp-org">Aston Martin Aramco F1 Team</p>
-            <p class="exp-period">2022 — 2024 · 3 Seasons</p>
-            <p class="exp-desc">
-              Supported race weekend sponsorship activation, coordinated paddock hospitality, and contributed to
-              partner communications across three Formula 1 seasons. Worked closely with commercial and brand teams
-              to deliver partner commitments at Grands Prix worldwide.
-            </p>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-logo">MG</div>
-          <div class="exp-details">
-            <p class="exp-role">Brand Strategy</p>
-            <p class="exp-org">Mahindra Group</p>
-            <p class="exp-period">2021 — 2022</p>
-            <p class="exp-desc">
-              Contributed to brand positioning and marketing campaigns across Mahindra Group's motorsport and
-              consumer divisions. Developed content and stakeholder communications supporting the group's
-              Formula E involvement and broader brand narrative.
-            </p>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-logo">OBR</div>
-          <div class="exp-details">
-            <p class="exp-role">Marketing Lead</p>
-            <p class="exp-org">Oxford Brookes Racing</p>
-            <p class="exp-period">2019 — 2021</p>
-            <p class="exp-desc">
-              Led marketing and sponsorship strategy for Oxford Brookes University's Formula Student team.
-              Managed social media, sponsor acquisition, and brand collateral, helping secure funding that
-              supported the team's competition programme.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── HIGHLIGHTS ── -->
-    <section id="highlights" class="section">
-      <h2 class="section-heading">Key <em>highlights.</em></h2>
-      <div class="highlights-grid">
-
-        <div class="highlight-card">
-          <div class="highlight-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <p class="highlight-title">3 F1 Seasons</p>
-          <p class="highlight-body">Three consecutive seasons embedded within the Aston Martin F1 paddock across multiple Grands Prix.</p>
-        </div>
-
-        <div class="highlight-card">
-          <div class="highlight-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <p class="highlight-title">Global Partnerships</p>
-          <p class="highlight-body">Activated and managed sponsorship relationships with global brands across race weekends in Europe, Asia and the Americas.</p>
-        </div>
-
-        <div class="highlight-card">
-          <div class="highlight-icon">
-            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <p class="highlight-title">Dual-Code Experience</p>
-          <p class="highlight-body">Unique exposure spanning both Formula 1 and Formula E — two distinct championship cultures and commercial models.</p>
-        </div>
-
-        <div class="highlight-card">
-          <div class="highlight-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <p class="highlight-title">Brand &amp; Content</p>
-          <p class="highlight-body">Built and executed content strategies across social, digital, and event channels for motorsport and consumer brands.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── CONTACT ── -->
-    <section id="contact" class="section">
-      <h2 class="section-heading">Get in <em>touch.</em></h2>
-      <div class="contact-grid">
-        <div>
-          <p class="contact-blurb">
-            Whether you're looking to discuss a partnership, explore a commercial opportunity, or simply want to
-            connect within the motorsport and marketing world — I'd love to hear from you.
-          </p>
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/pratulramesh" target="_blank" rel="noopener" class="contact-link">
-              <span class="contact-link-icon">
-                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </span>
-              LinkedIn — Connect with me
-            </a>
-            <a href="mailto:pratul@example.com" class="contact-link">
-              <span class="contact-link-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </span>
-              pratul@example.com
-            </a>
-          </div>
-        </div>
-        <div>
-          <form class="contact-form" id="contactForm" novalidate>
-            <input type="text" id="formName" placeholder="Your name" required />
-            <input type="email" id="formEmail" placeholder="Your email" required />
-            <textarea id="formMsg" placeholder="Your message" required></textarea>
-            <button type="submit" class="btn-form">Send Message</button>
-            <p class="form-msg" id="formSuccess">Thanks — I'll be in touch soon!</p>
-          </form>
-        </div>
-      </div>
-    </section>
   </main>
-
-  <footer>
-    <span>© 2024 Pratul Ramesh</span>
-    <span>Oxford, UK · Motorsports &amp; Marketing</span>
-  </footer>
-
-  <script>
-    // ── Hamburger menu ──
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      });
-    });
-
-    // Close mobile menu on outside click
-    document.addEventListener('click', e => {
-      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      }
-    });
-
-    // ── Contact form (client-side only — shows success message) ──
-    // Replace this with your actual form backend (e.g. Formspree, Netlify Forms, EmailJS)
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('formName').value.trim();
-      const email = document.getElementById('formEmail').value.trim();
-      const msg = document.getElementById('formMsg').value.trim();
-
-      if (!name || !email || !msg) {
-        alert('Please fill in all fields.');
-        return;
-      }
-      if (!email.includes('@')) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-
-      // ── To wire up a real backend, replace below with a fetch() to your endpoint ──
-      // Example with Formspree: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(this) })
-      document.getElementById('formSuccess').style.display = 'block';
-      this.reset();
-    });
-
-    // ── Active nav link highlight on scroll ──
-    const sections = document.querySelectorAll('section[id], div[id="skills"]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.style.color = link.getAttribute('href') === '#' + entry.target.id
-              ? '#fff'
-              : 'rgba(255,255,255,0.55)';
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(s => observer.observe(s));
-  </script>
-
 </body>
 </html>
