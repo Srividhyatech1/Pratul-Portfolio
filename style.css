@@ -115,7 +115,7 @@ nav {
   transform: scale(1.03);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE */ 
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
