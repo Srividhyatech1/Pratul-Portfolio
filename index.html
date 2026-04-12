@@ -2,183 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pratul Ramesh — Motorsport & Marketing portfolio. Experience with Aston Martin F1, Mahindra Group, and Oxford Brookes Racing." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pratul Ramesh — Motorsports & Marketing</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: #0a0a0a;
-      min-height: 100vh;
       font-family: 'Inter', sans-serif;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
+      color: white;
     }
 
     nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 20px 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    .nav-logo { font-weight: 800; font-size: 20px; }
-
-    .nav-links { display: flex; gap: 32px; }
+    .nav-links { display: flex; gap: 24px; }
 
     .nav-links a {
-      color: rgba(255,255,255,0.55);
-      font-size: 14px;
+      color: rgba(255,255,255,0.6);
       text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #fff; }
-
-    /* BUTTONS */
-    a.btn-connect, a.btn-primary, a.btn-secondary {
-      text-decoration: none;
-      cursor: pointer;
     }
 
-    a.btn-connect {
+    .nav-links a:hover { color: white; }
+
+    /* BUTTON FIX */
+    .btn {
+      text-decoration: none;
+      padding: 10px 16px;
       background: #2563eb;
-      color: #fff;
       border-radius: 8px;
-      padding: 8px 18px;
-      font-size: 14px;
-      font-weight: 600;
+      color: white;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: background 0.2s;
     }
-    a.btn-connect:hover { background: #1d4ed8; }
 
-    .li-badge {
-      font-size: 11px;
-      font-weight: 800;
-      background: rgba(255,255,255,0.2);
-      border-radius: 3px;
-      padding: 1px 4px;
-    }
+    .btn:hover { background: #1d4ed8; }
 
     .hero {
-      flex: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding: 56px 48px 64px;
+      padding: 60px 40px;
       max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-right: 48px;
+      margin: auto;
+      align-items: center;
     }
 
     h1 {
-      font-size: 72px;
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -3px;
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.6);
       margin-bottom: 24px;
+      max-width: 400px;
     }
 
-    h1 em { font-style: italic; }
-
-    .hero-body {
-      color: rgba(255,255,255,0.55);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 36px;
-      max-width: 380px;
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
     }
-
-    .hero-ctas { display: flex; gap: 12px; }
-
-    .btn-primary {
-      background: #2563eb;
-      color: #fff;
-      border-radius: 100px;
-      padding: 14px 28px;
-      font-weight: 700;
-      transition: background 0.2s;
-    }
-    .btn-primary:hover { background: #1d4ed8; }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 100px;
-      padding: 14px 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
     }
+
     .btn-secondary:hover {
       background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.2);
     }
 
-    .li-icon {
-      background: #0077b5;
-      border-radius: 4px;
-      width: 18px;
-      height: 18px;
+    /* IMAGE FIX */
+    .profile {
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 10px;
-      font-weight: 800;
     }
 
-    <div class="hero-right" id="skills">
-
-  <!-- PROFILE IMAGE -->
-  <div class="profile-image">
-    <img src="your-image.jpg" alt="Pratul Ramesh">
-  </div>
-    
-    .hero-right {
-      padding-left: 48px;
-      border-left: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 96px 48px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    /* Accessibility (hidden gem) */
-    a:focus {
-      outline: 2px solid #2563eb;
-      outline-offset: 2px;
+    .profile img {
+      width: 300px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      object-fit: cover;
     }
 
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 40px 24px; }
-      h1 { font-size: 48px; }
-      .hero-right {
-        border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.07);
-        padding-top: 40px;
-        padding-left: 0;
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .profile {
+        margin-top: 40px;
       }
     }
   </style>
@@ -187,41 +109,48 @@
 <body>
 
   <nav>
-    <span class="nav-logo">PR.</span>
+    <div>PR.</div>
 
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#highlights">Highlights</a>
       <a href="#contact">Contact</a>
     </div>
 
-    <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" rel="noopener noreferrer" class="btn-connect">
-      <span class="li-badge">in</span> Connect
+    <!-- LINK FIXED -->
+    <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" class="btn">
+      in Connect
     </a>
   </nav>
 
-  <main class="hero">
+  <section class="hero">
 
-    <div class="hero-left">
-      <h1>From pit lane<br>to <em>boardroom.</em></h1>
+    <!-- LEFT -->
+    <div>
+      <h1>From pit lane<br>to boardroom.</h1>
 
-      <p class="hero-body">
-        I am Pratul Ramesh — three seasons at Aston Martin F1, Mahindra Group branding,
-        and Oxford Brookes Racing.
+      <p>
+        I am Pratul Ramesh — working across motorsport and marketing,
+        from Aston Martin F1 to brand strategy.
       </p>
 
-      <div class="hero-ctas">
-        <a href="#experience" class="btn-primary">View My Journey</a>
+      <div class="hero-buttons">
+        <a href="#experience" class="btn">View My Journey</a>
 
-        <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          <span class="li-icon">in</span> LinkedIn
+        <!-- LINK FIXED -->
+        <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" class="btn btn-secondary">
+          LinkedIn
         </a>
       </div>
     </div>
 
-  </main>
+    <!-- RIGHT IMAGE -->
+    <div class="profile">
+      <!-- IMAGE FIX: MAKE SURE FILE NAME MATCHES -->
+      <img src="profile.jpg" alt="Pratul Ramesh">
+    </div>
+
+  </section>
 
 </body>
 </html>
