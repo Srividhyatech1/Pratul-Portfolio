@@ -688,3 +688,15 @@ a { text-decoration: none; color: inherit; }
 
   .experience-section, .highlights-section { padding: 60px 24px; }
 }
+
+.profile-image {
+  margin-bottom: 32px;
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+}
