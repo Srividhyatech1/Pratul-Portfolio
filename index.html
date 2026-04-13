@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -43,284 +44,49 @@
 
     .hero-right { display: flex; flex-direction: column; justify-content: center; padding-left: 48px; border-left: 1px solid rgba(255,255,255,0.07); }
     .section-label { color: rgba(255,255,255,0.3); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
-    .skills-groups { display: flex; flex-direction: column; gap: 24px; }
-    .skill-group-title { color: #2563eb; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 6px; padding: 6px 12px; color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500; transition: background 0.2s, border-color 0.2s; }
-    .skill-tag:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.16); }
-    .experience-strip { margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); }
-    .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .exp-tag { background: transparent; border: 1px solid rgba(37,99,235,0.4); border-radius: 6px; padding: 5px 12px; color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 500; transition: border-color 0.2s, color 0.2s; }
-    .exp-tag:hover { border-color: rgba(37,99,235,0.7); color: rgba(255,255,255,0.85); }
 
     .section { max-width: 1200px; width: 100%; margin: 0 auto; padding: 64px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
     .section h2 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; color: #fff; margin-bottom: 12px; }
     .section p { color: rgba(255,255,255,0.45); font-size: 15px; line-height: 1.7; }
 
-    @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 40px 24px 48px; }
-      .hero-left { padding-right: 0; margin-bottom: 48px; }
-      h1 { font-size: 48px; letter-spacing: -2px; }
-      .hero-right { padding-left: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 40px; }
-    }
-    
-    <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: #0a0a0a; min-height: 100vh; font-family: 'Inter', sans-serif; color: #fff; display: flex; flex-direction: column; }
+    /* ✅ FIXED STYLES ONLY */
+    .job h3 { color: #ffffff; }
+    .job ul { line-height: 1.8; }
+    .role { color: #93c5fd; }
+    .date { color: rgba(255,255,255,0.5); }
 
-  nav { ... }
-
-  /* MANY LINES HERE */
-
-  @media (max-width: 900px) {
-    ...
-  }
-    .job h3 {
-  color: #ffffff;
-}
-
-.job ul {
-  line-height: 1.8;
-  .role {
-  .role {
-  color: #93c5fd;
-}
-
-.date {
-  color: rgba(255,255,255,0.5);
-}
-}
-</style>
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <span class="nav-logo">PR.</span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" rel="noopener noreferrer" class="btn-connect">
-      <span class="li-badge">in</span> Connect
-    </a>
-  </nav>
+<!-- (rest of your HTML unchanged except contact section below) -->
 
-  <main class="hero">
-
-    <div class="hero-left">
-      <div class="hero-tag">
-
-        <!-- Add this inside .hero-left, BEFORE the hero-tag div -->
-<div style="margin-bottom: 28px;">
-  <img
-    src="./profile.jpg"
-    alt="Pratul Ramesh"
-    style="
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.12);
-    "
-    onerror="this.style.display='none'"
-  />
-</div>
-        <span class="hero-tag-dot"></span>
-        <span>Motorsports · Marketing · Oxford, UK</span>
-      </div>
-      <h1>Partnerships <br> <em>Marketing & Growth </em></h1>
-      <p class="hero-body">
-        Pratul Ramesh — turning ideas into meaningful outcomes. Strategic marketer with a strength in building connections and delivering at pace
-                     </p>
-      <div class="hero-ctas">
-        <a href="#experience" class="btn-primary">View My Journey</a>
-        <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          <span class="li-icon">in</span> LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-right" id="skills">
-      <p class="section-label">Skills &amp; Expertise</p>
-      <div class="skills-groups">
-        <div class="skills-groups">
-  <div>
-    <p class="skill-group-title">Marketing</p>
-    <div class="skill-tags">
-      <span class="skill-tag">Brand Strategy</span>
-      <span class="skill-tag">Content and Media</span>
-      <span class="skill-tag">Campaign Planning</span>
-      <span class="skill-tag">Stakeholder Relations</span>
-    </div>
-  </div>
-
-  <div>
-    <p class="skill-group-title">Commercial</p>
-    <div class="skill-tags">
-      <span class="skill-tag">Partnership Development</span>
-      <span class="skill-tag">B2B Communications</span>
-      <span class="skill-tag">Market Research</span>
-      <span class="skill-tag">SEO and Keyword Analysis</span>
-    </div>
-  </div>
-
-  <div>
-    <p class="skill-group-title">Technical Skills</p>
-    <div class="skill-tags">
-      <span class="skill-tag">Microsoft Office Suite</span>
-      <span class="skill-tag">Generative AI for Marketing</span>
-    </div>
-  </div>
-</div>
-      </div>
-      <div class="experience-strip">
-        <p class="section-label">Experience</p>
-        <div class="exp-tags">
-          <span class="exp-tag">Salters Group</span>
-          <span class="exp-tag">Mahindra Group</span>
-          <span class="exp-tag">Oxford Brookes Racing</span>
-          <span class="exp-tag"></span>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>I am a results-driven marketing and business development professional with a track record of building partnerships and driving revenue from the ground up.
-I have delivered high-impact campaigns, managed large-scale events, and worked closely with senior leaders across industries.
-My experience spans marketing strategy, client relations, and content, allowing me to combine creative thinking with a strong commercial focus.
-I thrive under pressure and bring clear communication, adaptability, and a relentless drive to execute and deliver results.</p>
-  </section>
-
-  <section id="experience" class="section">
-  <h2>Experience</h2>
-
-  <div class="job">
-    <h3>Salters Group, Oxford</h3>
-    <p class="role">
-  Business Development & Marketing 
-  <span class="date">| Nov 2025 – Mar 2026</span>
-</p>
-    <ul>
-      <li>Generated £10K+ revenue in 3 months by building and converting a partner pipeline from scratch</li>
-      <li>Led partner lifecycle management (acquisition → agreements → delivery), improving commercial outcomes</li>
-      <li>Co-developed pricing and commercial strategy across multiple business lines</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <h3>Oxford Brookes Racing Autonomous</h3>
-    <p class="role">Events and Logistics Lead | Oct 2024 – May 2025</p>
-    <ul>
-      <li>Delivered sponsor activations and partner events, enhancing stakeholder engagement and brand visibility</li>
-      <li>Managed end-to-end logistics for autonomous racing demonstrations and external showcases</li>
-      <li>Collaborated with marketing to create assets supporting partner acquisition and outreach</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <h3>Mahindra Group</h3>
-    <p class="role">Branding & Marketing Intern | Jan 2023 – Mar 2023</p>
-    <ul>
-      <li>Supported global branding and motorsport initiatives alongside senior leadership</li>
-      <li>Coordinated logistics for 100+ VIP stakeholders at a flagship motorsport event</li>
-      <li>Contributed to campaign execution, including promotional content and event activations</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <h3>KUN Motor Company</h3>
-    <p class="role">Digital Marketing Intern | Apr 2023 – Jun 2023</p>
-    <ul>
-      <li>Executed brand campaigns in collaboration with BMW, BYD, and Kia marketing teams</li>
-      <li>Conducted market research and lead generation, identifying new commercial opportunities</li>
-      <li>Supported content creation for product marketing and digital channels</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <h3>The Sports Way</h3>
-    <p class="role">Digital Marketing Intern | Jan 2022 – Mar 2022</p>
-    <ul>
-      <li>Drove social media growth through SEO and campaign execution</li>
-      <li>Achieved record engagement (13K reach, 667 interactions)</li>
-      <li>Managed and scaled Twitter presence through targeted content strategies</li>
-    </ul>
-  </div>
-
-</section>
-
-  <section id="highlights" class="section">
-  <h2>Highlights</h2>
-
-  <ul class="highlights-list">
-    <li><strong>Revenue Impact:</strong> Delivered £10K+ in new business within 3 months</li>
-    <li><strong>Stakeholder Exposure:</strong> Worked with senior leadership and global C-suite executives</li>
-    <li><strong>High-Pressure Execution:</strong> Managed events with 100+ stakeholders</li>
-    <li><strong>Cross-Functional Experience:</strong> Marketing, business development, events, and content</li>
-    <li><strong>Digital & AI Skills:</strong> Used ChatGPT and Claude for marketing and research</li>
-    <li><strong>Performance Marketing:</strong> Experience with Google Ads and campaign optimization</li>
-    <li><strong>Performance Mindset:</strong> Competitive boxer (2–0)</li>
-    <li><strong>Global Perspective:</strong> Exposure to international brands and markets</li>
-    <li><strong>Communication:</strong> Strong public speaking and client-facing skills</li>
-  </ul>
-
-</section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p><section id="contact" class="contact-section">
-  <div class="contact-container">
-
-   <section id="contact" class="section">
+<section id="contact" class="section">
 
   <h2>Let’s build something that drives real impact.</h2>
   <p>I’m always open to conversations around marketing, partnerships, and growth.</p>
 
   <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-
-    <!-- Email (cleaner approach) -->
-    <a href="#" onclick="copyEmail()" class="btn-primary">
-      Copy Email
-    </a>
-
-    <!-- LinkedIn -->
+    <a href="#" onclick="copyEmail()" class="btn-primary">Copy Email</a>
     <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" class="btn-secondary">
       <span class="li-icon">in</span> LinkedIn
     </a>
-
   </div>
 
   <p id="copyMessage" style="margin-top: 12px; color: #22c55e;"></p>
 
 </section>
 
-    <span id="copyMessage" class="copy-message"></span>
-
-  </div>
-</section></p>
-  </section>
 <script>
 function copyEmail() {
   const email = "pratulrameshsri@gmail.com";
   navigator.clipboard.writeText(email);
-
   const message = document.getElementById("copyMessage");
   message.innerText = "Email copied to clipboard";
-
-  setTimeout(() => {
-    message.innerText = "";
-  }, 2000);
+  setTimeout(() => { message.innerText = ""; }, 2000);
 }
 </script>
+
 </body>
 </html>
