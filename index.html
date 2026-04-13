@@ -53,8 +53,8 @@
     .exp-tag { background: transparent; border: 1px solid rgba(37,99,235,0.4); border-radius: 6px; padding: 5px 12px; color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 500; transition: border-color 0.2s, color 0.2s; }
     .exp-tag:hover { border-color: rgba(37,99,235,0.7); color: rgba(255,255,255,0.85); }
 
-    .section { max-width: 1200px; width: 100%; margin: 0 auto; padding: 96px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .section h2 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; color: #fff; margin-bottom: 16px; }
+    .section { max-width: 1200px; width: 100%; margin: 0 auto; padding: 64px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .section h2 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; color: #fff; margin-bottom: 12px; }
     .section p { color: rgba(255,255,255,0.45); font-size: 15px; line-height: 1.7; }
 
     @media (max-width: 900px) {
@@ -241,26 +241,26 @@ Communication Strength: Strong public speaking and client-facing skills, with ex
     <p><section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <h2>Let’s build something that drives real impact.</h2>
-    <p>I’m always open to conversations around marketing, partnerships, and growth.</p>
+   <section id="contact" class="section">
 
-    <div class="contact-actions">
+  <h2>Let’s build something that drives real impact.</h2>
+  <p>I’m always open to conversations around marketing, partnerships, and growth.</p>
 
-    <a href="mailto:pratulrameshsri@gmail.com" class="btn primary">
-      📩 Email Me
+  <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+
+    <!-- Email (cleaner approach) -->
+    <a href="#" onclick="copyEmail()" class="btn-primary">
+      Copy Email
     </a>
 
-    <button class="btn secondary" onclick="copyEmail()">
-      📋 Copy Email
-    </button>
-
-    <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" class="btn outline">
-      🔗 LinkedIn
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/pratul-ramesh-f1/" target="_blank" class="btn-secondary">
+      <span class="li-icon">in</span> LinkedIn
     </a>
 
   </div>
 
-  <span id="copyMessage" class="copy-message"></span>
+  <p id="copyMessage" style="margin-top: 12px; color: #22c55e;"></p>
 
 </section>
 
@@ -269,6 +269,18 @@ Communication Strength: Strong public speaking and client-facing skills, with ex
   </div>
 </section></p>
   </section>
+<script>
+function copyEmail() {
+  const email = "pratulrameshsri@gmail.com";
+  navigator.clipboard.writeText(email);
 
+  const message = document.getElementById("copyMessage");
+  message.innerText = "Email copied to clipboard";
+
+  setTimeout(() => {
+    message.innerText = "";
+  }, 2000);
+}
+</script>
 </body>
 </html>
